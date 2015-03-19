@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="252.0" prefWidth="478.0"
+	xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="selesdepselesnul.calculator.view.AboutController">
+	<children>
+		<TextArea editable="false" layoutY="45.0" prefHeight="167.0"
+			prefWidth="478.0"
+			text="Pangetang is a simple calculator that is built in javafx&#10;Copyright (C) 2015  Moch Deden R S&#10;This program is free software: you can redistribute it and/or modify&#10;it under the terms of the GNU General Public License as published by&#10;the Free Software Foundation, either version 3 of the License, or&#10;(at your option) any later version.&#10;&#10;This program is distributed in the hope that it will be useful,&#10;but WITHOUT ANY WARRANTY; without even the implied warranty of&#10;MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the&#10;GNU General Public License for more details.&#10;&#10;You should have received a copy of the GNU General Public License&#10;along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.&#10;" />
+		<Text layoutX="164.0" layoutY="26.0" strokeType="OUTSIDE"
+			strokeWidth="0.0" text="PANGETANG V 1.0" />
+		<Button layoutX="371.0" layoutY="219.0" mnemonicParsing="false"
+			onAction="#onClickOkButton" prefHeight="25.0" prefWidth="86.0" text="Ok" />
+		<ImageView fitHeight="31.0" fitWidth="49.0" layoutX="131.0"
+			layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+			<image>
+				<Image url="@images.jpg" />
+			</image>
+		</ImageView>
+	</children>
+</AnchorPane>

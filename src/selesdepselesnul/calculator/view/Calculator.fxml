@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="390.0" prefWidth="300.0"
+	xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="selesdepselesnul.calculator.view.CalculatorController">
+	<children>
+		<MenuBar prefHeight="29.0" prefWidth="398.0"
+			AnchorPane.bottomAnchor="361.0" AnchorPane.leftAnchor="0.0"
+			AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+			<menus>
+				<Menu mnemonicParsing="false" text="File">
+					<items>
+						<MenuItem mnemonicParsing="false" onAction="#onClickClose"
+							text="Close" />
+					</items>
+				</Menu>
+				<Menu mnemonicParsing="false" text="Help">
+					<items>
+						<MenuItem mnemonicParsing="false" onAction="#onClickAbout"
+							text="About" />
+					</items>
+				</Menu>
+			</menus>
+		</MenuBar>
+		<TextField fx:id="calculatorTextField" alignment="CENTER_RIGHT"
+			editable="false" layoutX="22.0" layoutY="35.0" prefHeight="54.0"
+			prefWidth="256.0" promptText="0" text="0" AnchorPane.bottomAnchor="301.0"
+			AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="22.0"
+			AnchorPane.topAnchor="35.0">
+			<font>
+				<Font size="24.0" />
+			</font>
+		</TextField>
+		<Button layoutX="22.0" layoutY="98.0" mnemonicParsing="false"
+			onAction="#onClickMC" prefHeight="37.0" prefWidth="42.0" text="MC" />
+		<Button layoutX="22.0" layoutY="145.0" mnemonicParsing="false"
+			onAction="#onClickBackSpaceButton" prefHeight="37.0" prefWidth="42.0"
+			text="←" />
+		<Button layoutX="22.0" layoutY="195.0" mnemonicParsing="false"
+			onAction="#onClickNumberButton" prefHeight="37.0" prefWidth="42.0"
+			text="7" />
+		<Button layoutX="22.0" layoutY="241.0" mnemonicParsing="false"
+			onAction="#onClickNumberButton" prefHeight="37.0" prefWidth="42.0"
+			text="4" />
+		<Button layoutX="22.0" layoutY="287.0" mnemonicParsing="false"
+			onAction="#onClickNumberButton" prefHeight="37.0" prefWidth="42.0"
+			text="1" />
+		<Button layoutX="22.0" layoutY="333.0" mnemonicParsing="false"
+			onAction="#onClickNumberButton" prefHeight="37.0" prefWidth="95.0"
+			text="0" />
+		<Button layoutX="76.0" layoutY="287.0" mnemonicParsing="false"
+			onAction="#onClickNumberButton" prefHeight="37.0" prefWidth="42.0"
+			text="2" />
+		<Button layoutX="76.0" layoutY="241.0" mnemonicParsing="false"
+			onAction="#onClickNumberButton" prefHeight="37.0" prefWidth="42.0"
+			text="5" />
+		<Button layoutX="76.0" layoutY="195.0" mnemonicParsing="false"
+			onAction="#onClickNumberButton" prefHeight="37.0" prefWidth="42.0"
+			text="8" />
+		<Button layoutX="76.0" layoutY="145.0" mnemonicParsing="false"
+			onAction="#onClickCE" prefHeight="37.0" prefWidth="42.0" text="CE" />
+		<Button layoutX="76.0" layoutY="98.0" mnemonicParsing="false"
+			onAction="#onClickMR" prefHeight="37.0" prefWidth="42.0" text="MR" />
+		<Button layoutX="129.0" layoutY="333.0" mnemonicParsing="false"
+			onAction="#onClickNumberButton" prefHeight="37.0" prefWidth="42.0"
+			text="." />
+		<Button layoutX="129.0" layoutY="287.0" mnemonicParsing="false"
+			onAction="#onClickNumberButton" prefHeight="37.0" prefWidth="42.0"
+			text="3" />
+		<Button layoutX="129.0" layoutY="241.0" mnemonicParsing="false"
+			onAction="#onClickNumberButton" prefHeight="37.0" prefWidth="42.0"
+			text="6" />
+		<Button layoutX="129.0" layoutY="195.0" mnemonicParsing="false"
+			onAction="#onClickNumberButton" prefHeight="37.0" prefWidth="42.0"
+			text="9" />
+		<Button layoutX="129.0" layoutY="145.0" mnemonicParsing="false"
+			onAction="#onClickC" prefHeight="37.0" prefWidth="42.0" text="C" />
+		<Button layoutX="129.0" layoutY="98.0" mnemonicParsing="false"
+			onAction="#onClickMS" prefHeight="37.0" prefWidth="42.0" text="MS" />
+		<Button layoutX="184.0" layoutY="98.0" mnemonicParsing="false"
+			onAction="#onClickMPlus" prefHeight="37.0" prefWidth="42.0" text="M+" />
+		<Button layoutX="184.0" layoutY="145.0" mnemonicParsing="false"
+			onAction="#onClickUnaryOperator" prefHeight="37.0" prefWidth="42.0"
+			text="±" />
+		<Button layoutX="184.0" layoutY="195.0" mnemonicParsing="false"
+			onAction="#onClickBinaryOperator" prefHeight="37.0" prefWidth="42.0"
+			text="/" />
+		<Button layoutX="184.0" layoutY="241.0" mnemonicParsing="false"
+			onAction="#onClickBinaryOperator" prefHeight="37.0" prefWidth="42.0"
+			text="*" />
+		<Button layoutX="184.0" layoutY="287.0" mnemonicParsing="false"
+			onAction="#onClickBinaryOperator" prefHeight="37.0" prefWidth="42.0"
+			text="-" />
+		<Button layoutX="184.0" layoutY="333.0" mnemonicParsing="false"
+			onAction="#onClickBinaryOperator" prefHeight="37.0" prefWidth="42.0"
+			text="+" />
+		<Button layoutX="238.0" layoutY="98.0" mnemonicParsing="false"
+			onAction="#onClickMMinus" prefHeight="37.0" prefWidth="42.0" text="M-" />
+		<Button layoutX="238.0" layoutY="145.0" mnemonicParsing="false"
+			onAction="#onClickUnaryOperator" prefHeight="37.0" prefWidth="42.0"
+			text="√" />
+		<Button layoutX="238.0" layoutY="195.0" mnemonicParsing="false"
+			onAction="#onClickPercentButton" prefHeight="37.0" prefWidth="42.0"
+			text="\%" />
+		<Button layoutX="238.0" layoutY="241.0" mnemonicParsing="false"
+			onAction="#onClickEqualSign" prefHeight="128.0" prefWidth="42.0"
+			text="=" />
+	</children>
+</AnchorPane>
