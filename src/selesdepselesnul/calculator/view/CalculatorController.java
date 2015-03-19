@@ -3,7 +3,6 @@ package selesdepselesnul.calculator.view;
 import java.io.IOException;
 import java.util.function.BiFunction;
 import java.util.function.Function;
-
 import selesdepselesnul.calculator.UnaryOperationFactory;
 import selesdepselesnul.calculator.Calculator;
 import selesdepselesnul.calculator.BinaryOperationFactory;
@@ -14,7 +13,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
@@ -26,20 +24,20 @@ public class CalculatorController {
 	TextField calculatorTextField;
 
 	@FXML
-	boolean isFirst = true;
+	private boolean isFirst = true;
 	private Calculator calculator = new Calculator();
-	private String operand = "";
+	private StringBuilder operand = new StringBuilder();
 	private boolean isFirstPeriod = true;
 
 	@FXML
 	public void onClickNumberButton(ActionEvent e) {
 		Button numberButton = (Button) e.getSource();
 		if (!numberButton.getText().equals(".")) {
-			this.operand += numberButton.getText();
-			this.calculatorTextField.setText(this.operand);
+			this.operand.append(numberButton.getText());
+			this.calculatorTextField.setText(this.operand.toString());
 		} else if (this.isFirstPeriod) {
-			this.operand += numberButton.getText();
-			this.calculatorTextField.setText(this.operand);
+			this.operand.append(numberButton.getText());
+			this.calculatorTextField.setText(this.operand.toString());
 			this.isFirstPeriod = false;
 		}
 
@@ -48,7 +46,8 @@ public class CalculatorController {
 	@FXML
 	public void onClickBinaryOperator(ActionEvent e) {
 		if (this.isFirst && this.calculator.getResult() == 0) {
-			this.calculator.setResult(Double.parseDouble(this.operand));
+			this.calculator.setResult(Double.parseDouble(this.operand
+					.toString()));
 			this.isFirst = false;
 		}
 		Button operatorButton = (Button) e.getSource();
@@ -62,16 +61,17 @@ public class CalculatorController {
 	public void registerOperation(BiFunction<Double, Double, Double> operator) {
 		if (this.calculator.getResult() != 0) {
 			this.calculator.setOperation(operator);
-			this.operand = "";
+			this.operand.delete(0, this.operand.length());
 		}
 
 	}
 
 	@FXML
 	public void onClickEqualSign() {
-		if (this.calculator.getResult() != 0) {
+		if ((this.calculator.getResult() != 0)) {
 			String stringResult = this.calculator.calculate(Double
-					.parseDouble(this.operand)) + "";
+					.parseDouble(this.operand.toString())) + "";
+
 			setTextWithFormating(stringResult);
 		}
 	}
@@ -98,8 +98,8 @@ public class CalculatorController {
 		if (this.operand.length() == 0) {
 			clearToZero();
 		} else {
-			this.operand = deleteLastChar(this.operand);
-			this.calculatorTextField.setText(this.operand);
+			this.operand.deleteCharAt(this.operand.length() - 1);
+			this.calculatorTextField.setText(this.operand.toString());
 		}
 	}
 
@@ -108,14 +108,10 @@ public class CalculatorController {
 		this.calculatorTextField.setAlignment(Pos.CENTER_RIGHT);
 	}
 
-	private String deleteLastChar(String resultString) {
-		return resultString.substring(0, this.operand.length() - 1);
-	}
-
 	@FXML
 	public void onClickCE() {
 		this.isFirst = true;
-		this.operand = "";
+		this.operand.delete(0, this.operand.length());
 		this.isFirstPeriod = true;
 		clearToZero();
 	}
